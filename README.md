@@ -1,7 +1,8 @@
 # json-go-struct
 convert json to go struct(one nest struct and multi normal separate structs),you can check my another project https://github.com/GrayOxygen/json-go-struct-app/ just a app version of this project , in this project , I used https://github.com/mholt/json-to-go to get nested golang struct(much appreciated!!!)
 > 将json转为golang的struct，目前开源的项目、工具中，只找到转成嵌套的struct形式，于是写了个转成非嵌套的struct，you will get result like this
-JSON 
+
+## JSON 
 ```
 {
   "items": [
@@ -97,7 +98,7 @@ JSON
 }
 ```
  
-Multi Separate Struct
+## Multi Separate Struct
 ```
 type StructName struct {
 	Items []*Items `json:"items"`
@@ -153,7 +154,7 @@ type ItemsOrderItems struct {
 
 ```
 
-Nested Struct
+## Nested Struct
 ```
 type StructName struct {
 	Items []struct {
