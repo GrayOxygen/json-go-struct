@@ -1,0 +1,47 @@
+{
+  "status": 0,
+  "message": "",
+  "data": {
+    "search_data": [{
+      "elements": [{
+        "visited_count": 1958,
+        "comments_count": 0,
+        "location": {
+          "lat": 34.685087,
+          "lng": 135.805
+        },
+        "has_experience": false,
+        "rating_users": 0,
+        "name_zh": "奈良市",
+        "name_en": "Nara",
+        "type": 3,
+        "id": 10052,
+        "has_route_maps": false,
+        "icon": "http://media.breadtrip.com/images/icons/2/city.png"
+      },
+        {
+          "rating": 0,
+          "name": "挪威",
+          "url": "/scenic/1/3258/",
+          "wish_to_go_count": 788,
+          "name_orig": "挪威",
+          "visited_count": 850,
+          "comments_count": 0,
+          "location": {
+            "lat": 60.472024,
+            "lng": 8.468946
+          },
+          "has_experience": false,
+          "icon": "http://media.breadtrip.com/images/icons/2/country.png",
+          "type": 1,
+          "id": "NO",
+          "has_route_maps": false,
+          "rating_users": 0
+        }
+      ]
+    }],
+    "location": {
+      "country": "china"
+    }
+  }
+}
