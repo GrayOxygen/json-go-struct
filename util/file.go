@@ -5,6 +5,7 @@ import (
 	"os"
 	"os/exec"
 	"path/filepath"
+	"bufio"
 )
 
 //追加写入文件
@@ -68,4 +69,20 @@ func GetCurPath() string {
 	rst := filepath.Dir(path)
 
 	return rst
+}
+
+//按行读取文件
+func FileToLines(filePath string) (lines []string, err error) {
+	f, err := os.Open(filePath)
+	if err != nil {
+		return
+	}
+	defer f.Close()
+
+	scanner := bufio.NewScanner(f)
+	for scanner.Scan() {
+		lines = append(lines, scanner.Text())
+	}
+	err = scanner.Err()
+	return
 }

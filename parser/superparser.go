@@ -195,7 +195,7 @@ func distinctStructName(node *tree.TreeNode) {
 		} else {
 			fatherNode := tree.GetFatherNode(node, item)
 			oldName := item.Value.Name
-			newName := oldName + fatherNode.Value.Name
+			newName := fatherNode.Value.Name + oldName
 			item.Value.Name = newName
 			item.Value.Describe = strings.Replace(item.Value.Describe, util.GetTagName(oldName), util.GetTagName(newName), -1)
 			item.Value.DefineInfo = strings.Replace(item.Value.DefineInfo, oldName, newName, -1)
@@ -242,8 +242,10 @@ func genOneNode(node *tree.TreeNode) error {
 	if err != nil {
 		return err
 	}
+	ct = util.RemoveEmptyLineString(string(content))
+
 	//再去掉空行
-	ct = strings.Replace(string(content), "\n\n", "", -1)
+	//ct = strings.Replace(string(content), "\n\n", "", -1)
 
 	util.Log.Printf("\n genOneNode::后的内容：：：    %s\n", content)
 	resStruct += string(ct)

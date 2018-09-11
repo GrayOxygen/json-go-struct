@@ -2,7 +2,6 @@ package apis
 
 import (
 	"github.com/golang-collections/collections/stack"
-	"os"
 	"github.com/GrayOxygen/json-go-struct/errors"
 	"github.com/GrayOxygen/json-go-struct/parser"
 	"github.com/GrayOxygen/json-go-struct/tree"
@@ -13,7 +12,7 @@ import (
 )
 
 var (
-	nestStrutPath = util.GetCurPath() + "/嵌套Struct"
+	//nestStrutPath = util.GetCurPath() + "/嵌套Struct"
 	structName    = "StructName" //输出的struct名称(顶级)  TODO 支持自定义
 	//左大括，成对出栈找到子struct
 	leftStack = stack.New()
@@ -36,16 +35,16 @@ func JSON2Struct(jsonStr string) (string, string, error) {
 		return "", "", errors.New("json解析失败，请检查格式是否正确，常见错误有：json中带有//注释，中英文的逗号等")
 	}
 
-	if util.Exists(nestStrutPath) {
-		if err := os.Remove(nestStrutPath); err != nil {
-			fmt.Println("删除 嵌套文件失败：：：", err)
-			return "", "", err
-		}
-	}
-	if err := util.WriteTrunc(nestStrutPath, nestStructStr); err != nil {
-		fmt.Println("内嵌Struct结构写入文件失败：：：", err)
-		return "", "", err
-	}
+	//if util.Exists(nestStrutPath) {
+	//	if err := os.Remove(nestStrutPath); err != nil {
+	//		fmt.Println("删除 嵌套文件失败：：：", err)
+	//		return "", "", err
+	//	}
+	//}
+	//if err := util.WriteTrunc(nestStrutPath, nestStructStr); err != nil {
+	//	fmt.Println("内嵌Struct结构写入文件失败：：：", err)
+	//	return "", "", err
+	//}
 
 	root := &tree.TreeNode{}
 	root.Level = 0 //层级为0，返回的数据才是真的tree，层级从1开始
