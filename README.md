@@ -1,5 +1,5 @@
 # json-go-struct
-convert json to go struct(one nest struct and multi normal separate structs)
+convert json to go struct(one nest struct and multi normal separate structs),you can check my another project https://github.com/GrayOxygen/json-go-struct-app/ just a app version of this project
 > 将json转为golang的struct，目前开源的项目、工具中，只找到转成嵌套的struct形式，于是写了个转成非嵌套的struct，you will get result like this
 ``` 
 type StructName struct {
