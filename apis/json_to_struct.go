@@ -1,11 +1,11 @@
 package apis
 
 import (
-	"github.com/golang-collections/collections/stack"
 	"github.com/GrayOxygen/json-go-struct/errors"
 	"github.com/GrayOxygen/json-go-struct/parser"
 	"github.com/GrayOxygen/json-go-struct/tree"
 	"github.com/GrayOxygen/json-go-struct/util"
+	"github.com/golang-collections/collections/stack"
 	"strings"
 
 	"fmt"
@@ -13,7 +13,7 @@ import (
 
 var (
 	//nestStrutPath = util.GetCurPath() + "/嵌套Struct"
-	structName    = "StructName" //输出的struct名称(顶级)  TODO 支持自定义
+	structName = "StructName" //输出的struct名称(顶级)  TODO 支持自定义
 	//左大括，成对出栈找到子struct
 	leftStack = stack.New()
 )

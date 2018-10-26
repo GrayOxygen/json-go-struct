@@ -1,14 +1,14 @@
 package parser
 
 import (
-	"github.com/robertkrimen/otto"
 	"github.com/GrayOxygen/json-go-struct/consts"
+	"github.com/robertkrimen/otto"
 
-	"github.com/golang-collections/collections/stack"
 	"github.com/GrayOxygen/json-go-struct/enums"
 	"github.com/GrayOxygen/json-go-struct/model"
 	"github.com/GrayOxygen/json-go-struct/tree"
 	"github.com/GrayOxygen/json-go-struct/util"
+	"github.com/golang-collections/collections/stack"
 	"strings"
 
 	"bytes"

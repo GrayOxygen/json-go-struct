@@ -1,16 +1,13 @@
 package model
 
-
 import "github.com/GrayOxygen/json-go-struct/enums"
-
-
 
 type StructObj struct {
 	Id         string
 	Name       string
 	Type       enums.PropertyType
-	DefineInfo string
-	Describe   string
+	DefineInfo string //如	BuyerID   string `json:"buyerId"`的 BuyerID   string
+	Describe   string //如	BuyerID   string `json:"buyerId"`的`json:"buyerId"`
 }
 
 //解析过的括号

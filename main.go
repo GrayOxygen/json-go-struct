@@ -2,9 +2,9 @@ package main
 
 import (
 	"fmt"
-	_ "github.com/robertkrimen/otto/underscore"
-	"github.com/GrayOxygen/json-go-struct/util"
 	"github.com/GrayOxygen/json-go-struct/apis"
+	"github.com/GrayOxygen/json-go-struct/util"
+	_ "github.com/robertkrimen/otto/underscore"
 	"io/ioutil"
 	"os"
 	"runtime"
