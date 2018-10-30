@@ -6,7 +6,7 @@ type StructObj struct {
 	Id         string
 	Name       string
 	Type       enums.PropertyType
-	DefineInfo string //如	BuyerID   string `json:"buyerId"`的 BuyerID   string
+	DefineInfo string //struct定义信息，如	ShippingAddressInfo struct {
 	Describe   string //如	BuyerID   string `json:"buyerId"`的`json:"buyerId"`
 }
 

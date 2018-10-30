@@ -48,12 +48,38 @@ func JSON2Proto(jsonStr string) (string, string, error) {
 	util.PrintTree(root)
 
 	//3，遍历树，输出非嵌套struct到文件中
-	res, err := parser.Generate(root)
+	res, err := parser.GenerateProto(root)
 	util.Log.Printf("\n 返回的非嵌套struct为 \n %s   \n", res)
 	if err != nil {
 		fmt.Println("生成非嵌套文件失败：：：", err)
 		return "", "", err
 	}
+
+	//格式化proto
+	format_res := ""
+	format_res_scanner := strings.Split(res, "\n") //下标0是第一行，1是第二行...
+	for index := lineCount - 1; index < len(format_res_scanner); index++ {
+		temp_line := ""
+		if !strings.Contains(format_res_scanner[index], "message") && !strings.Contains(format_res_scanner[index], "}") {
+			//缩进保持一致
+			format_res_scanner[index] = strings.TrimLeft(format_res_scanner[index], " ")
+			format_res_scanner[index] = strings.TrimLeft(format_res_scanner[index], "\t")
+			temp_line = "	" + strings.TrimLeft(format_res_scanner[index], " ")
+		}
+		if strings.Contains(format_res_scanner[index], "message") {
+			temp_line = format_res_scanner[index]
+			temp_line = strings.Replace(temp_line, "\t", "", -1)
+		}
+		if strings.Contains(format_res_scanner[index], "}") {
+			temp_line = format_res_scanner[index]
+		}
+
+		fmt.Println(temp_line)
+		format_res += temp_line + "\n"
+	}
+	fmt.Println("生成的文件...")
+	fmt.Println(format_res)
+	fmt.Println("生成的文件...")
 	return nestStructStr, res, nil
 
 }
