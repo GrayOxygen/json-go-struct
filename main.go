@@ -39,17 +39,13 @@ func test_json_to_struct() {
 func test_json_to_proto() {
 	//读取json文件	START
 	fmt.Println(util.GetCurPath())
-	bytes, err := ioutil.ReadFile("./testjson/test3.json")
+	bytes, err := ioutil.ReadFile("./testjson/test2.json")
 
 	jsonStr := string(bytes)
 	////读取json文件  END
 	util.Log.Printf("\n 传入的json为 %s   \n", jsonStr)
-	nestStructStr, structStr, err := apis.JSON2Proto(jsonStr);
-	fmt.Println("Start............===============")
-	fmt.Println(nestStructStr)
-	fmt.Println("===============")
-	fmt.Println(structStr)
-	fmt.Println("===============")
+	prot_str, err := apis.JSON2Proto(jsonStr);
+	fmt.Println(prot_str)
 	if err != nil {
 		fmt.Println(err)
 	}
